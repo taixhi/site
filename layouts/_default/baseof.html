@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>{{ or .Title .Site.Title }}{{ if ne .Kind "home" }} | {{ .CurrentSection.Title }}{{ end }}</title>
+    {{ $style := resources.Get "scss/style.scss" | toCSS | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</head>
+
+<body>
+    
+    <nav id="hero"><a href="/" id="hero-a"><span id="dllu-hero"><span style="display:none;">dllu</span><span
+                    id="D"></span><span id="L0"></span><span id="L1"></span><span id="U"></span></span></a></nav>
+    <nav id="rootnav">
+        {{ range .Site.Sections }}
+        <a href="{{ .RelPermalink }}">{{ or .Title .RelPermalink }}</a>
+        {{ end }}
+    </nav>
+    <nav id="root">
+        <main>
+            <header>
+                <h1 id="top">{{ .Title }}</h1>
+            </header>
+            {{ block "page" . }}
+            default page content
+            {{ end }}
+            <footer>
+                <p>© Taichi Kato. Last updated on {{time.Format ":date_long" now }}.
+                </p>
+            </footer>
+        </main>
+    </nav>
+
+</body>
+
+</html>
