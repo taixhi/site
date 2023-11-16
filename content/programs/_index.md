@@ -2,6 +2,7 @@
 title: Programs
 ---
 Here are some programs I have worked on in the past:
+- [**Minerva AI (2023)**](https://github.com/minerva-ed/MinervAI) - A classroom simulation tool for educators.
 - [**Zipcall (2020)**](https://zipcall.io/) - A peer-to-peer browser video calling platform with unmatched video quality
 and latency. It has 2.8k stars on GitHub and boasts 100k active users. I contributed by adding support for group
 calling.
